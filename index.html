@@ -108,92 +108,112 @@
       <h1 style="text-align: center; margin: 0 30px; background-color: white; padding: 40px 10px 0px !important;">
         メニュー
     </h1>
-    
-    <!-- ランチメニューセクション -->
-    <section id="lunch-services" style="margin-left: 30px; margin-right: 30px;">
-        <!-- 画像 -->
-        <div class="image-wrapper">
-            <img src="img/ランチメニュー.jpg" alt="ランチメニュー">
-        </div>
-    
-        <!-- 背景を白いもやに変更 -->
-        <div class="background-image"></div>
-    
-        <!-- 文字コンテンツ -->
-        <div class="container">
-            <div class="row mb-4">
-                <div class="col-md-8 mx-auto text-center">
-                    <h1>ランチ</h1>
-                    <p>10:00~(ラストオーダー14:00)</p>
-                    <p>毎日異なるメニューを提供しております。</p>
-                    <br>
-    
-                    <div class="row">
-                        <div class="col-md-6 text-start">
-                            <p>ランチ：￥2500</p>
-                            <p>⚫ 前菜</p>
-                            <p>⚫ メインディッシュ</p>
-                            <p>⚫ デザート</p>
-                            <p>⚫ パン、自家製のハム添え</p>
-                            <p>⚫ コーヒー</p>
-                        </div>
-                        <div class="col-md-6 text-start">
-                            <p>フルコース：￥4000</p>
-                            <p>⚫ 前菜</p>
-                            <p>⚫ パスタ</p>
-                            <p>⚫ 魚料理</p>
-                            <p>⚫ 肉料理</p>
-                            <p>⚫ デザート</p>
-                            <p>⚫ パン、自家製のハム添え</p>
-                            <p>⚫ コーヒー</p>
+
+
+ <!-- ランチメニューセクション -->
+<section id="lunch-services" style="margin-left: 30px; margin-right: 30px;">
+    <!-- 画像 -->
+    <div class="image-wrapper">
+        <img src="img/ランチメニュー.jpg" alt="ランチメニュー">
+    </div>
+
+    <!-- 背景を白いもやに変更 -->
+    <div class="background-image"></div>
+
+    <!-- 文字コンテンツ -->
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-md-8 mx-auto text-center">
+                <h1>ランチ</h1>
+                <p>10:00~(ラストオーダー14:00)</p>
+                <p>毎日異なるメニューを提供しております。</p>
+                <br>
+
+                <!-- ランチメニューの最初の部分（1行目） -->
+                <div class="row">
+                    <div class="col-md-6 text-start">
+                        <p>ランチ：￥2500</p>
+                        <p>⚫ 前菜</p>
+                        <p>⚫ メインディッシュ</p>
+                        <p>⚫ デザート</p>
+                        <p>⚫ パン、自家製のハム添え</p>
+                        <p>⚫ コーヒー</p>
+                    </div>
+                    <div class="col-md-6 text-start">
+                        <p>フルコース：￥4000</p>
+                        <p>⚫ 前菜</p>
+                        <p>⚫ パスタ</p>
+                        <!-- 最初はここまで表示 -->
+                        <div class="more-info-lunch">
+                            <span class="dots">...</span>
+                            <span class="more-text">
+                                <p>⚫ 魚料理</p>
+                                <p>⚫ 肉料理</p>
+                                <p>⚫ デザート</p>
+                                <p>⚫ パン、自家製のハム添え</p>
+                                <p>⚫ コーヒー</p>
+                            </span>
                         </div>
                     </div>
                 </div>
+                <!-- 「もっと見る」リンク -->
+                <a href="javascript:void(0);" class="more-link" onclick="toggleLunchMenu()">すべて見る</a>
             </div>
         </div>
-    </section>
-    
-    <!-- ディナーメニューセクション -->
-    <section id="dinner-services" style="margin-left: 30px; margin-right: 30px;">
-        <!-- 画像 -->
-        <div class="image-wrapper">
-            <img src="img/DM.jpg" alt="ディナーメニュー">
-        </div>
-    
-        <!-- 背景を白いもやに変更 -->
-        <div class="background-image"></div>
-    
-        <!-- 文字コンテンツ -->
-        <div class="container">
-            <div class="row mb-4">
-                <div class="col-md-8 mx-auto text-center">
-                    <h1>ディナー</h1>
-                    <p>17:00~(ラストオーダー20:00)</p>
-                    <p>毎日異なるメニューを提供しております。</p>
-                    <div class="row">
-                        <div class="col-md-6 text-start">
-                            <p>ディナー：￥5000</p>
-                            <p>⚫ 前菜</p>
-                            <p>⚫ パスタ</p>
-                            <p>⚫ 魚料理</p>
-                            <p>⚫ 肉料理</p>
-                            <p>⚫ デザート</p>
-                            <p>⚫ パン、自家製のハム添え</p>
-                            <p>⚫ コーヒー</p>
-                        </div>
-                        <div class="col-md-6 text-start">
-                            <p>フルコース：￥8000</p>
-                            <p>⚫ 前菜</p>
-                            <p>⚫ メインディッシュ</p>
-                            <p>⚫ デザート</p>
-                            <p>⚫ パン、自家製のハム添え</p>
-                            <p>⚫ コーヒー</p>
+    </div>
+</section>
+
+<!-- ディナーメニューセクション -->
+<section id="dinner-services" style="margin-left: 30px; margin-right: 30px;">
+    <!-- 画像 -->
+    <div class="image-wrapper">
+        <img src="img/DM.jpg" alt="ディナーメニュー">
+    </div>
+
+    <!-- 背景を白いもやに変更 -->
+    <div class="background-image"></div>
+
+    <!-- 文字コンテンツ -->
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-md-8 mx-auto text-center">
+                <h1>ディナー</h1>
+                <p>17:00~(ラストオーダー20:00)</p>
+                <p>毎日異なるメニューを提供しております。</p>
+                <div class="row">
+                    <div class="col-md-6 text-start">
+                        <p>ディナー：￥5000</p>
+                        <p>⚫ 前菜</p>
+                        <p>⚫ パスタ</p>
+                        <p>⚫ 魚料理</p>
+                        <p>⚫ 肉料理</p>
+                        <p>⚫ デザート</p>
+                        <p>⚫ パン、自家製のハム添え</p>
+                        <p>⚫ コーヒー</p>
+                    </div>
+                    <div class="col-md-6 text-start">
+                        <p>フルコース：￥8000</p>
+                        <p>⚫ 前菜</p>
+                        <!-- 最初はここまで表示 -->
+                        <div class="more-info-dinner">
+                            <span class="dots">...</span>
+                            <span class="more-text">
+                                <p>⚫ メインディッシュ</p>
+                                <p>⚫ デザート</p>
+                                <p>⚫ パン、自家製のハム添え</p>
+                                <p>⚫ コーヒー</p>
+                            </span>
                         </div>
                     </div>
                 </div>
+                <!-- 「もっと見る」リンク -->
+                <a href="javascript:void(0);" class="more-link" onclick="toggleDinnerMenu()">すべて見る</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+
     
     <!-- 料理写真 見出し -->
     <h1 style="text-align: center; margin: 0 30px; background-color: white; padding: 30px 10px 10px;">
@@ -460,6 +480,7 @@
   <script src="h-slider.js"></script>
   <script src="b-slider.js"></script>
   <script src="m-anime.js"></script>
+  <script src="oritatami.js"></script>
 
   
 </body>
