@@ -1,0 +1,35 @@
+name: Build Jekyll Site
+
+on:
+  push:
+    branches:
+      - main  # mainブランチにpushされたときにビルドが実行されます
+  pull_request:
+    branches:
+      - main  # pull request が main ブランチに対して行われたときにもビルド
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. コードのチェックアウト
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # 2. Rubyのセットアップ
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.7'  # 使用するRubyのバージョンを設定
+
+      # 3. 必要なパッケージのインストール
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle install  # Gemfileから依存関係をインストール
+
+      # 4. Jekyllサイトのビルド
+      - name: Build Jekyll site
+        run: |
+          bundle exec jekyll build --source . --destination ./_site
