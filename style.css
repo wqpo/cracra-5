@@ -860,6 +860,9 @@ button:hover {
   margin-left: -30px;
   margin-right: -30px;
   padding-top: 60px !important;
+  /* 高さの調整をレスポンシブに対応させる */
+  min-height: 200px; /* 最小高さを設定 */
+  max-height: 60%; /* 最大高さを画面に合わせる */
 }
 
 /* ランチメニューの文字コンテンツ設定 */
@@ -1023,6 +1026,121 @@ button:hover {
   #dinner-services .background-image {
     width: calc(50% + 60px); /* 幅を50%より広く設定 */
     height: 55%; /* 高さを調整 */
+    margin-left: -30px; /* 水平位置調整 */
+    margin-right: -30px; /* 水平位置調整 */
+  }
+}
+
+
+/* 折りたたみ */
+/* 初期状態ではメニューの詳細部分を非表示 */
+/* 初期状態ではメニューの詳細部分を非表示 */
+.more-info-lunch .more-text,
+.more-info-dinner .more-text {
+  display: none;
+}
+
+.more-link {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* 832px以上の場合（PCなどの大きな画面） */
+@media (min-width: 832px) {
+  /* メニューの内容はすべて表示 */
+  .more-info-lunch .dots,
+  .more-info-dinner .dots {
+    display: none;  /* 詳細部分は表示しない */
+  }
+
+  /* 「もっと見る」リンクも表示しない */
+  .more-link {
+    display: none;
+  }
+
+  .more-info-lunch .more-text,
+  .more-info-dinner .more-text {
+    display: block;  /* すべての内容を表示 */
+  }
+
+  /* 2列表示 */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .col-md-6 {
+    flex: 0 0 48%;  /* 2列表示 */
+  }
+}
+
+/* 832px未満の場合（スマホ） */
+@media (max-width: 831px) {
+  /* 1列表示 */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .col-md-6 {
+    flex: 0 0 100%;  /* 1列表示 */
+  }
+
+  /* 省略部分（...）を表示 */
+  .more-info-lunch .dots,
+  .more-info-dinner .dots {
+    display: inline;  /* 最初は省略（...）を表示 */
+  }
+
+  /* 詳細部分（...）は非表示 */
+  .more-info-lunch .more-text,
+  .more-info-dinner .more-text {
+    display: none;
+  }
+
+  /* 「もっと見る」リンクを表示 */
+  .more-link {
+    display: inline;
+  }
+}
+
+/* 追加 */
+
+/* スマホ */
+@media (max-width: 767px) {
+  /* 背景画像のサイズ調整 */
+  #lunch-services .background-image {
+    width: 90%; /* 幅を画面に合わせて縮小 */
+    height: auto; /* 高さを調整 */
+    padding-top: 50px !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* 背景画像内の文字がはみ出さないように調整 */
+  #lunch-services .container {
+    max-width: 85%; /* 文字を背景画像の中に収める */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px; /* 余白を少し追加 */
+  }
+}
+/* PC画面向け調整 */
+@media (min-width: 780px) {
+  /* 背景画像の調整 */
+  #lunch-services .background-image {
+    width: calc(50% + 60px); /* 幅を50%より広く設定 */
+    height: 80%; /* 高さを調整 */
+    margin-left: -30px; /* 水平位置調整 */
+    margin-right: -30px; /* 水平位置調整 */
+  }
+}
+@media (min-width: 780px) {
+  /* 背景画像の調整 */
+  #dinner-services .background-image {
+    width: calc(50% + 60px); /* 幅を50%より広く設定 */
+    height: 60%; /* 高さを調整 */
     margin-left: -30px; /* 水平位置調整 */
     margin-right: -30px; /* 水平位置調整 */
   }
